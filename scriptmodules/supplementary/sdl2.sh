@@ -79,7 +79,7 @@ function build_sdl2() {
     fi
     ! isPlatform "x11" && conf_flags+=("--disable-video-vulkan")
     isPlatform "mali" && conf_flags+=("--enable-video-mali" "--disable-video-opengl")
-    isPlatform "rpi" && conf_flags+=("--enable-video-rpi")
+    isPlatform "rpi" && conf_flags+=("--disable-video-rpi" "--enable-video-kmsdrm")
     isPlatform "kms" || isPlatform "rpi" && conf_flags+=("--enable-video-kmsdrm")
 
     # format debian package dependencies into comma-separated list
